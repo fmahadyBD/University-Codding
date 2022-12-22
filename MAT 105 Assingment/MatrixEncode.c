@@ -1,72 +1,63 @@
+/*
+Mahady Hasan Fahim 
+22-11-2022
+Math 105
+
+*/
+
 #include <stdio.h>
-#include <string.h>
 #include <windows.h>
 
-void mul(int first[3][3], int second[3][10], int result[3][10])
-{
-    int c, d, sum, k;
-    int i, j;
-    for (c = 0; c < 3; c++)
-    {
-        for (d = 0; d < 10; d++)
-        {
-            sum = 0;
-            for (k = 0; k < 3; k++)
-            {
-                sum = sum + first[c][k] * second[k][d];
-            }
-            result[c][d] = sum;
-        }
-    }
-}
+
 int main()
 {
-    HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 
+
+     HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(h, 6);
-    char str[29] = "“MY FAVOURIATE BOOK IS NOTHING";
-    int len;
-    int i, j;
-    int result[3][10] = {0};
-    int key[3][3] = {
+    printf("Name: Mahady Hasan Fahim\n");
+    SetConsoleTextAttribute(h, 3);
+    
+    int t2d[100], encode[100];
+    int i, j, i1 = 0, j1 = 0;
+ 
+    char s[100]="OMY FAVOURIATE BOK IS NOTHINGS";
+      int key[3][3] = {
         {1, -1, 1},
         {1, 1, 0},
         {1, 2, 1}};
-
-    int encode[3][10] = {32};
-
-    len = strlen(str);
-
-    for (i = 0; i < 10; i++)
-    {
-        for (j = 0; j < 3; j++)
+ 
+    i=0; 
+while(s[i]!='\0') 
+{
+        if (s[i] == ' ')
         {
-            if (str[j + i * 3] >= 'a' && str[j + i * 3] <= 'z')
-            {
-                encode[j][i] = str[j + i * 3] - 96;
-            }
-            if (str[j + i * 3] == 32)
-            {
-                encode[j][i] = 32;
-            }
-            if (str[j + i * 3] == '\0')
-                break;
+            t2d[i] = 0;
         }
-        if (str[j + i * 3] == '\0')
-            break;
-    }
+        else if (s[i] < 'A' || s[i] > 'Z')
+        {
+            t2d[i] = 27;
+        }
+        else
+        {
+            t2d[i] = s[i] - 64;
+        }
+        i++; 
+} 
+ 
+    j1=0; j=0; 
 
-    /* Mahady Hasan Fahim
-      19-12-2022
-      Assingment of math 105*/
-
-    mul(key, encode, result);
-    printf("\nEncoded message to be sent: ");
-    for (i = 0; i < 10; i++)
-    {
-        for (j = 0; j < 3; j++)
-            printf("%d, ", result[j][i]);
-    }
-
-    return 0;
+    while(j1<i) 
+{
+        encode[j1] = (t2d[j] * key[0][0]) + (t2d[j + 1] * key[1][0]);
+        j1++;
+        encode[j1] = (t2d[j] * key[0][1]) + (t2d[j + 1] * key[1][1]);
+        j1++;
+        j = j + 2; 
+} 
+printf("The Encode is: \n");
+SetConsoleTextAttribute(h, 4);
+    for(j=0; j<i; j++) {
+        printf("%d ", encode[j]); 
+}
 }
