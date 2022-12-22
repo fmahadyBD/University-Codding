@@ -4,7 +4,10 @@ Mahady Hasan Fahim
 Math 105
 
 */
-
+/*
+Using suitable command encode the message “MY FAVOURIATE BOOK IS …………”
+by using matrix A given below:
+*/
 #include <stdio.h>
 #include <windows.h>
 
