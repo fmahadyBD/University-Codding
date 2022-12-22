@@ -23,20 +23,20 @@ int main()
     
  
     int a[ 20 ][ 20 ], var, i, j, k, l, n;
-    printf( "\nEnter the number of variables:\n" );
+    printf( "\n Number of variables:\n" );
     scanf( "%d", &var );
  
     for ( i = 0;i < var;i++ )
     {
-        printf( "\nEnter the equation%d:\n", i + 1 );
+        printf( "\nEnter your  equation %i:\n", i + 1 );
  
         for ( j = 0;j < var;j++ )
         {
-            printf( "Enter the coefficient of  x%d:\n", j + 1 );
+            printf( "Enter the coefficient of  x%i:\n", j + 1 );
             scanf( "%d", &a[ i ][ j ] );
         }
  
-        printf( "\nEnter the constant:\n" );
+        printf( "\nEnter the constant number:\n" );
         scanf( "%d", &a[ i ][ var] );
     }
  
@@ -64,12 +64,12 @@ void solution( int a[ 20 ][ 20 ], int var )
         }
     }
  
-    printf( "\n\tSolutions:" );
+    printf( "\n\tAnswer is: " );
     
  
     for ( i = 0;i < var;i++ )
     {
-        printf( "\nTHE VALUE OF x%d IS %f\n", i + 1, ( float ) a[ i ][ var ] / ( float ) a[ i ][ i ] );
+        printf( "\nvalue x%d is -> %f\n", i + 1, ( float ) a[ i ][ var ] / ( float ) a[ i ][ i ] );
     }
  
 }
