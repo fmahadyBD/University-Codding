@@ -20,7 +20,7 @@ int main()
     SetConsoleTextAttribute(h, 6);
     printf("Name: Mahady Hasan Fahim\n");
     SetConsoleTextAttribute(h, 3);
-    
+    // It is just for  decorations
  
     int a[ 20 ][ 20 ], var, i, j, k, l, n;
     printf( "\n Number of variables:\n" );
