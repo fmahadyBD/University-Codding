@@ -20,7 +20,7 @@ int main()
     SetConsoleTextAttribute(h, 6);
     printf("Name: Mahady Hasan Fahim\n");
     SetConsoleTextAttribute(h, 3);
-    
+    // we don't need this
     int t2d[100], encode[100];
     int i, j, i1 = 0, j1 = 0;
  
