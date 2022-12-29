@@ -1,3 +1,5 @@
+/*It is not the final code.. It need more debuging.. I will work on it soon*/
+
 #include <stdio.h>
 
 int a[100];
