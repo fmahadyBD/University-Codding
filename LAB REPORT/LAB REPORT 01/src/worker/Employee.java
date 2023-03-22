@@ -15,6 +15,6 @@ public abstract class Employee {
     abstract void giveselary();
 
     public void show() {
-        System.out.print(" Id:" + id + " Name: " + " age:" + age);
+        System.out.print(" Id:" + id + " Name: " +name+ " age:" + age);
     }
 }
