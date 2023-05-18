@@ -1,7 +1,7 @@
 
 package com.mycompany.lab06;
 
-
+// nono sttic holo objecter por, static holo objecter age
 public class Lab06 {
     public static void main(String[] args) {
         int redW=40;
