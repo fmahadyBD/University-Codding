@@ -21,6 +21,7 @@ using namespace std;
 string bs(const string& data, const string& f, const string& e) {
     string op; 
     size_t pos=0; 
+     op+=f;
     while (pos<data.size()) {
             if (data.substr(pos,f.size())==f||data.substr(pos, e.size())==e) {          
             op+=e;
@@ -31,6 +32,7 @@ string bs(const string& data, const string& f, const string& e) {
             pos++;
         }
     } 
+    op+=f;
     return op;
 }
 
@@ -39,15 +41,15 @@ signed  main() {
     string FLAG = "GALF"; 
     string ESCAPE = "ESCAPE";
     int n;
-    cout<<"Enter the test case:";
-    cin>>n;
-    while(n--){
+ 
+
     cout << "Enter messange: ";
     getline(cin, data);
     string outp = bs(data, FLAG, ESCAPE); 
-    cout<<"Output\n";  
-    cout <<data<< " This is some data: " << outp <<" Data: "<<data<< endl;
-    }
+    
+    cout <<"OUTPUT: " << outp << endl;
+    n--;
+  
     
     return 0; 
 }
