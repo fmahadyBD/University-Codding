@@ -1,0 +1,19 @@
+Client Connected at server Handshaking port 5000
+Client’s Communication Port: 56190
+Client is Connected
+Enter the messages that you want to send and send "stop" to close the connection:
+Hello
+Hi
+Bye
+stop
+
+
+Server is connected at port no: 5000
+Server is connecting
+Waiting for the client
+Client request is accepted at port no: 56190
+Server’s Communication Port: 5000
+Client Says: Hello
+Client Says: Hi
+Client Says: Bye
+Client Says: stop

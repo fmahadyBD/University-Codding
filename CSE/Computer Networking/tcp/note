@@ -1,0 +1,65 @@
+Inputs:
+
+    Initial ssthresh value: The threshold dividing the slow start and congestion avoidance phases.
+    Length of data: The size of data to be transmitted, in arbitrary units.
+
+Outputs:
+
+The program prints messages to the console showing:
+
+    The current round-trip time (RTT).
+    The size of cwnd and ssthresh.
+    Whether the program is in Slow Start or Congestion Avoidance.
+    How the program handles congestion (Timeout or 3 Dup Ack).
+
+How to Run and Input Data:
+
+    Compile and Run the Program: Use the following commands in a terminal with the Java environment installed:
+
+    javac TCPCongestionControl.java
+    java tcpcongestioncontrol.TCPCongestionControl
+
+    Input:
+        Enter the initial ssthresh value (e.g., 8).
+        Enter the length of data to be sent (e.g., 50).
+
+Example Input:
+
+Please input the initial ssthresh value: 8
+Enter the length of your data: 50
+
+    Output:
+        The program will display the process of sending data, including phase transitions (SS or CA), cwnd, ssthresh, and how congestion is handled.
+
+Example Output:
+
+Connected to the Server... ...
+Please input the initial ssthresh value: 8
+Enter the length of your data: 50
+Your data is started to be sent ...
+
+Data sending in RTT number 1
+-------------------------------
+previous cwnd size: 1
+updated ssthresh value: 8
+...SS phase running...
+updated cwnd size: 2
+Data from 1 - 2 is being sent now...
+
+Data sending in RTT number 2
+-------------------------------
+previous cwnd size: 2
+updated ssthresh value: 8
+...SS phase running...
+updated cwnd size: 4
+Data from 3 - 6 is being sent now...
+
+... but wait! congestion has been detected!
+Timeout occurred. Handling Timeout-based congestion: cwnd value will become 1.
+Retransmitting the lost packet now after handling.
+
+Your data sending is completed. No more data to send.
+Congestion Control mechanism concludes.
+It took 15 transmission rounds to send the whole data.
+
+This output is dynamic and depends on random congestion detection in the program. Each run might produce different results.
